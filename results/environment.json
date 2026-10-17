@@ -1,0 +1,64 @@
+{
+  "captured_utc": "2026-10-17T16:17:33.147346+00:00",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "scale": "sf50",
+  "docker_ps": "NAME                     IMAGE                                                                                                             COMMAND                  SERVICE    CREATED          STATUS                        PORTS\npr1-balanov-catalog-1    quay.io/lakekeeper/catalog@sha256:f41c353ef981c64ea284e25f2abf804561600bd7d63d8a3ce956ad84c6611f33                \"/home/nonroot/lakek…\"   catalog    50 minutes ago   Up 50 minutes                 127.0.0.1:18181->8181/tcp\npr1-balanov-migrate-1    quay.io/lakekeeper/catalog@sha256:f41c353ef981c64ea284e25f2abf804561600bd7d63d8a3ce956ad84c6611f33                \"/home/nonroot/lakek…\"   migrate    50 minutes ago   Exited (0) 50 minutes ago     \npr1-balanov-postgres-1   postgres:17-alpine                                                                                                \"docker-entrypoint.s…\"   postgres   57 minutes ago   Up 57 minutes (healthy)       5432/tcp\npr1-balanov-spark-1      apache/spark:3.5.5                                                                                                \"/bin/bash -lc 'slee…\"   spark      51 minutes ago   Exited (137) 46 minutes ago   \npr1-balanov-storage-1    pgsty/silo:RELEASE.2026-09-16T00-00-00Z@sha256:635197cb9f36d01bee221d34d1c7d7960f6a95c48b0b6c01d99cd13bdae51a46   \"/usr/bin/docker-ent…\"   storage    50 minutes ago   Up 50 minutes                 127.0.0.1:19000->9000/tcp, 127.0.0.1:19001->9001/tcp\npr1-balanov-trino-1      trinodb/trino:476                                                                                                 \"/usr/lib/trino/bin/…\"   trino      50 minutes ago   Up 3 minutes (healthy)        127.0.0.1:18080->8080/tcp\n",
+  "images": [
+    {
+      "Id": "sha256:00125e40d063bc4816d165482f6044872b18b56026fb959d3b28ce1f96ffbbee",
+      "RepoTags": [
+        "trinodb/trino:476"
+      ],
+      "RepoDigests": [
+        "trinodb/trino@sha256:00125e40d063bc4816d165482f6044872b18b56026fb959d3b28ce1f96ffbbee"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    {
+      "Id": "sha256:39321d67b23e2e0953f81b60778f74bf40c40a18dfb0e881e6a38593af60afa1",
+      "RepoTags": [
+        "apache/spark:3.5.5"
+      ],
+      "RepoDigests": [
+        "apache/spark@sha256:39321d67b23e2e0953f81b60778f74bf40c40a18dfb0e881e6a38593af60afa1"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    {
+      "Id": "sha256:635197cb9f36d01bee221d34d1c7d7960f6a95c48b0b6c01d99cd13bdae51a46",
+      "RepoTags": [
+        "pgsty/silo:RELEASE.2026-09-16T00-00-00Z"
+      ],
+      "RepoDigests": [
+        "pgsty/silo@sha256:635197cb9f36d01bee221d34d1c7d7960f6a95c48b0b6c01d99cd13bdae51a46"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    {
+      "Id": "sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193",
+      "RepoTags": [
+        "postgres:17",
+        "postgres:17-alpine"
+      ],
+      "RepoDigests": [
+        "postgres@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    },
+    {
+      "Id": "sha256:f41c353ef981c64ea284e25f2abf804561600bd7d63d8a3ce956ad84c6611f33",
+      "RepoTags": [
+        "quay.io/lakekeeper/catalog:latest-main"
+      ],
+      "RepoDigests": [
+        "quay.io/lakekeeper/catalog@sha256:f41c353ef981c64ea284e25f2abf804561600bd7d63d8a3ce956ad84c6611f33"
+      ],
+      "Architecture": "amd64",
+      "Os": "linux"
+    }
+  ]
+}

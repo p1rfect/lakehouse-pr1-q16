@@ -1,0 +1,9 @@
+{
+  "Cpu": "AMD Ryzen 7 8845H w/ Radeon 780M Graphics",
+  "HostMemoryBytes": 29860155392,
+  "DockerMemoryBytes": 14552330240,
+  "DockerCPUs": 16,
+  "FreeDiskBytes": 270359891968,
+  "DateMoscow": "2026-10-17",
+  "CapturedUtc": "2026-10-17T15:47:58.7940942Z"
+}

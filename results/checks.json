@@ -1,0 +1,13 @@
+{
+  "supplier_null_or_invalid_key": 0,
+  "part_null_or_invalid_key": 0,
+  "supplier_duplicate_keys": 0,
+  "part_duplicate_keys": 0,
+  "partsupp_duplicate_pairs": 0,
+  "orphan_part": 0,
+  "orphan_supplier": 0,
+  "complaint_supplier_in_silver": 0,
+  "reference_bronze_gold_equal": true,
+  "gold_rows": 27840,
+  "gold_sha256": "c0d1ab411f580af0b318b92638d0d87e84c43821c317b5159ea373d942f0ea1a"
+}

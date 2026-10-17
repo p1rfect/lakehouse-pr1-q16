@@ -1,0 +1,622 @@
+{
+  "original_snapshot": 437168094408061822,
+  "historical": {
+    "label": "time_travel_before_update",
+    "sql": "SELECT suppkey,name,comment FROM silver.lakehouse.evolution_demo FOR VERSION AS OF 437168094408061822 ORDER BY suppkey",
+    "session": null,
+    "query_id": "20261017_153010_00046_y4di2",
+    "utc": "2026-10-17T15:30:10.993121+00:00",
+    "wall_seconds": 0.10383890000230167,
+    "stats": {
+      "state": "FINISHED",
+      "queued": false,
+      "scheduled": true,
+      "progressPercentage": 100.0,
+      "runningPercentage": 0.0,
+      "nodes": 1,
+      "totalSplits": 11,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 11,
+      "planningTimeMillis": 15,
+      "analysisTimeMillis": 13,
+      "cpuTimeMillis": 4,
+      "wallTimeMillis": 5,
+      "queuedTimeMillis": 0,
+      "elapsedTimeMillis": 66,
+      "finishingTimeMillis": 3,
+      "physicalInputTimeMillis": 0,
+      "processedRows": 3,
+      "processedBytes": 684,
+      "physicalInputBytes": 684,
+      "physicalWrittenBytes": 0,
+      "internalNetworkInputBytes": 756,
+      "peakMemoryBytes": 1404,
+      "spilledBytes": 0,
+      "rootStage": {
+        "stageId": "0",
+        "state": "FINISHED",
+        "done": true,
+        "nodes": 1,
+        "totalSplits": 1,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 1,
+        "cpuTimeMillis": 0,
+        "wallTimeMillis": 0,
+        "processedRows": 3,
+        "processedBytes": 329,
+        "physicalInputBytes": 0,
+        "failedTasks": 0,
+        "coordinatorOnly": false,
+        "subStages": [
+          {
+            "stageId": "1",
+            "state": "FINISHED",
+            "done": true,
+            "nodes": 1,
+            "totalSplits": 9,
+            "queuedSplits": 0,
+            "runningSplits": 0,
+            "completedSplits": 9,
+            "cpuTimeMillis": 2,
+            "wallTimeMillis": 3,
+            "processedRows": 3,
+            "processedBytes": 427,
+            "physicalInputBytes": 0,
+            "failedTasks": 0,
+            "coordinatorOnly": false,
+            "subStages": [
+              {
+                "stageId": "2",
+                "state": "FINISHED",
+                "done": true,
+                "nodes": 1,
+                "totalSplits": 1,
+                "queuedSplits": 0,
+                "runningSplits": 0,
+                "completedSplits": 1,
+                "cpuTimeMillis": 2,
+                "wallTimeMillis": 2,
+                "processedRows": 3,
+                "processedBytes": 684,
+                "physicalInputBytes": 684,
+                "failedTasks": 0,
+                "coordinatorOnly": false,
+                "subStages": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "columns": [
+      {
+        "name": "suppkey",
+        "type": "bigint",
+        "typeSignature": {
+          "rawType": "bigint",
+          "arguments": []
+        }
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "comment",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      }
+    ],
+    "rows": [
+      [
+        1,
+        "Supplier#000000001",
+        "each slyly above the careful"
+      ],
+      [
+        2,
+        "Supplier#000000002",
+        " slyly bold instructions. idle dependen"
+      ],
+      [
+        3,
+        "Supplier#000000003",
+        "blithely silent requests after the express dependencies are sl"
+      ]
+    ]
+  },
+  "changed": {
+    "label": "time_travel_current",
+    "sql": "SELECT * FROM silver.lakehouse.evolution_demo ORDER BY suppkey",
+    "session": null,
+    "query_id": "20261017_153011_00047_y4di2",
+    "utc": "2026-10-17T15:30:11.162100+00:00",
+    "wall_seconds": 0.16844250001304317,
+    "stats": {
+      "state": "FINISHED",
+      "queued": false,
+      "scheduled": true,
+      "progressPercentage": 100.0,
+      "runningPercentage": 0.0,
+      "nodes": 1,
+      "totalSplits": 12,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 12,
+      "planningTimeMillis": 39,
+      "analysisTimeMillis": 13,
+      "cpuTimeMillis": 28,
+      "wallTimeMillis": 31,
+      "queuedTimeMillis": 0,
+      "elapsedTimeMillis": 132,
+      "finishingTimeMillis": 10,
+      "physicalInputTimeMillis": 0,
+      "processedRows": 3,
+      "processedBytes": 1522,
+      "physicalInputBytes": 1522,
+      "physicalWrittenBytes": 0,
+      "internalNetworkInputBytes": 884,
+      "peakMemoryBytes": 1190,
+      "spilledBytes": 0,
+      "rootStage": {
+        "stageId": "0",
+        "state": "FINISHED",
+        "done": true,
+        "nodes": 1,
+        "totalSplits": 1,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 1,
+        "cpuTimeMillis": 1,
+        "wallTimeMillis": 1,
+        "processedRows": 3,
+        "processedBytes": 372,
+        "physicalInputBytes": 0,
+        "failedTasks": 0,
+        "coordinatorOnly": false,
+        "subStages": [
+          {
+            "stageId": "1",
+            "state": "FINISHED",
+            "done": true,
+            "nodes": 1,
+            "totalSplits": 9,
+            "queuedSplits": 0,
+            "runningSplits": 0,
+            "completedSplits": 9,
+            "cpuTimeMillis": 3,
+            "wallTimeMillis": 3,
+            "processedRows": 3,
+            "processedBytes": 512,
+            "physicalInputBytes": 0,
+            "failedTasks": 0,
+            "coordinatorOnly": false,
+            "subStages": [
+              {
+                "stageId": "2",
+                "state": "FINISHED",
+                "done": true,
+                "nodes": 1,
+                "totalSplits": 2,
+                "queuedSplits": 0,
+                "runningSplits": 0,
+                "completedSplits": 2,
+                "cpuTimeMillis": 24,
+                "wallTimeMillis": 27,
+                "processedRows": 3,
+                "processedBytes": 1522,
+                "physicalInputBytes": 1522,
+                "failedTasks": 0,
+                "coordinatorOnly": false,
+                "subStages": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "columns": [
+      {
+        "name": "suppkey",
+        "type": "bigint",
+        "typeSignature": {
+          "rawType": "bigint",
+          "arguments": []
+        }
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "comment",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "review_note",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      }
+    ],
+    "rows": [
+      [
+        1,
+        "Supplier#000000001",
+        "each slyly above the careful",
+        "checked"
+      ],
+      [
+        2,
+        "Supplier#000000002",
+        " slyly bold instructions. idle dependen",
+        null
+      ],
+      [
+        3,
+        "Supplier#000000003",
+        "blithely silent requests after the express dependencies are sl",
+        null
+      ]
+    ]
+  },
+  "restored": {
+    "label": "time_travel_restored",
+    "sql": "SELECT suppkey,name,comment FROM silver.lakehouse.evolution_demo ORDER BY suppkey",
+    "session": null,
+    "query_id": "20261017_153011_00049_y4di2",
+    "utc": "2026-10-17T15:30:11.477371+00:00",
+    "wall_seconds": 0.15006929999799468,
+    "stats": {
+      "state": "FINISHED",
+      "queued": false,
+      "scheduled": true,
+      "progressPercentage": 100.0,
+      "runningPercentage": 0.0,
+      "nodes": 1,
+      "totalSplits": 11,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 11,
+      "planningTimeMillis": 16,
+      "analysisTimeMillis": 14,
+      "cpuTimeMillis": 5,
+      "wallTimeMillis": 5,
+      "queuedTimeMillis": 0,
+      "elapsedTimeMillis": 58,
+      "finishingTimeMillis": 1,
+      "physicalInputTimeMillis": 0,
+      "processedRows": 3,
+      "processedBytes": 684,
+      "physicalInputBytes": 684,
+      "physicalWrittenBytes": 0,
+      "internalNetworkInputBytes": 756,
+      "peakMemoryBytes": 98076,
+      "spilledBytes": 0,
+      "rootStage": {
+        "stageId": "0",
+        "state": "FINISHED",
+        "done": true,
+        "nodes": 1,
+        "totalSplits": 1,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 1,
+        "cpuTimeMillis": 1,
+        "wallTimeMillis": 1,
+        "processedRows": 3,
+        "processedBytes": 329,
+        "physicalInputBytes": 0,
+        "failedTasks": 0,
+        "coordinatorOnly": false,
+        "subStages": [
+          {
+            "stageId": "1",
+            "state": "FINISHED",
+            "done": true,
+            "nodes": 1,
+            "totalSplits": 9,
+            "queuedSplits": 0,
+            "runningSplits": 0,
+            "completedSplits": 9,
+            "cpuTimeMillis": 2,
+            "wallTimeMillis": 2,
+            "processedRows": 3,
+            "processedBytes": 427,
+            "physicalInputBytes": 0,
+            "failedTasks": 0,
+            "coordinatorOnly": false,
+            "subStages": [
+              {
+                "stageId": "2",
+                "state": "FINISHED",
+                "done": true,
+                "nodes": 1,
+                "totalSplits": 1,
+                "queuedSplits": 0,
+                "runningSplits": 0,
+                "completedSplits": 1,
+                "cpuTimeMillis": 2,
+                "wallTimeMillis": 2,
+                "processedRows": 3,
+                "processedBytes": 684,
+                "physicalInputBytes": 684,
+                "failedTasks": 0,
+                "coordinatorOnly": false,
+                "subStages": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "columns": [
+      {
+        "name": "suppkey",
+        "type": "bigint",
+        "typeSignature": {
+          "rawType": "bigint",
+          "arguments": []
+        }
+      },
+      {
+        "name": "name",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "comment",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      }
+    ],
+    "rows": [
+      [
+        1,
+        "Supplier#000000001",
+        "each slyly above the careful"
+      ],
+      [
+        2,
+        "Supplier#000000002",
+        " slyly bold instructions. idle dependen"
+      ],
+      [
+        3,
+        "Supplier#000000003",
+        "blithely silent requests after the express dependencies are sl"
+      ]
+    ]
+  },
+  "schema": {
+    "label": null,
+    "sql": "DESCRIBE silver.lakehouse.evolution_demo",
+    "session": null,
+    "query_id": "20261017_153011_00050_y4di2",
+    "utc": "2026-10-17T15:30:11.647026+00:00",
+    "wall_seconds": 0.16900039999745786,
+    "stats": {
+      "state": "FINISHED",
+      "queued": false,
+      "scheduled": true,
+      "progressPercentage": 100.0,
+      "runningPercentage": 0.0,
+      "nodes": 1,
+      "totalSplits": 11,
+      "queuedSplits": 0,
+      "runningSplits": 0,
+      "completedSplits": 11,
+      "planningTimeMillis": 25,
+      "analysisTimeMillis": 15,
+      "cpuTimeMillis": 11,
+      "wallTimeMillis": 19,
+      "queuedTimeMillis": 0,
+      "elapsedTimeMillis": 89,
+      "finishingTimeMillis": 11,
+      "physicalInputTimeMillis": 0,
+      "processedRows": 4,
+      "processedBytes": 304,
+      "physicalInputBytes": 304,
+      "physicalWrittenBytes": 0,
+      "internalNetworkInputBytes": 624,
+      "peakMemoryBytes": 1022,
+      "spilledBytes": 0,
+      "rootStage": {
+        "stageId": "0",
+        "state": "FINISHED",
+        "done": true,
+        "nodes": 1,
+        "totalSplits": 1,
+        "queuedSplits": 0,
+        "runningSplits": 0,
+        "completedSplits": 1,
+        "cpuTimeMillis": 1,
+        "wallTimeMillis": 1,
+        "processedRows": 4,
+        "processedBytes": 312,
+        "physicalInputBytes": 0,
+        "failedTasks": 0,
+        "coordinatorOnly": false,
+        "subStages": [
+          {
+            "stageId": "1",
+            "state": "FINISHED",
+            "done": true,
+            "nodes": 1,
+            "totalSplits": 9,
+            "queuedSplits": 0,
+            "runningSplits": 0,
+            "completedSplits": 9,
+            "cpuTimeMillis": 3,
+            "wallTimeMillis": 10,
+            "processedRows": 4,
+            "processedBytes": 312,
+            "physicalInputBytes": 0,
+            "failedTasks": 0,
+            "coordinatorOnly": false,
+            "subStages": [
+              {
+                "stageId": "2",
+                "state": "FINISHED",
+                "done": true,
+                "nodes": 1,
+                "totalSplits": 1,
+                "queuedSplits": 0,
+                "runningSplits": 0,
+                "completedSplits": 1,
+                "cpuTimeMillis": 7,
+                "wallTimeMillis": 8,
+                "processedRows": 4,
+                "processedBytes": 304,
+                "physicalInputBytes": 304,
+                "failedTasks": 0,
+                "coordinatorOnly": false,
+                "subStages": []
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "columns": [
+      {
+        "name": "Column",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "Type",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "Extra",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      },
+      {
+        "name": "Comment",
+        "type": "varchar",
+        "typeSignature": {
+          "rawType": "varchar",
+          "arguments": [
+            {
+              "kind": "LONG",
+              "value": 2147483647
+            }
+          ]
+        }
+      }
+    ],
+    "rows": [
+      [
+        "suppkey",
+        "bigint",
+        "",
+        ""
+      ],
+      [
+        "name",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "comment",
+        "varchar",
+        "",
+        ""
+      ],
+      [
+        "review_note",
+        "varchar",
+        "",
+        ""
+      ]
+    ]
+  }
+}

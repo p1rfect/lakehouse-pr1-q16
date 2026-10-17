@@ -1,0 +1,189 @@
+{
+  "spark_version": "3.5.5",
+  "source": "Iceberg REST + S3FileIO; original Bronze files, no export/import",
+  "queries": {
+    "tables": {
+      "sql": "SHOW TABLES IN bronze.lakehouse",
+      "wall_seconds": 4.054611865999959,
+      "rows": [
+        {
+          "namespace": "lakehouse",
+          "tableName": "supplier",
+          "isTemporary": false
+        },
+        {
+          "namespace": "lakehouse",
+          "tableName": "part",
+          "isTemporary": false
+        },
+        {
+          "namespace": "lakehouse",
+          "tableName": "partsupp",
+          "isTemporary": false
+        }
+      ]
+    },
+    "sample": {
+      "sql": "SELECT suppkey,name,nationkey FROM bronze.lakehouse.supplier ORDER BY suppkey LIMIT 5",
+      "wall_seconds": 3.693421661000002,
+      "rows": [
+        {
+          "suppkey": 1,
+          "name": "Supplier#000000001",
+          "nationkey": 17
+        },
+        {
+          "suppkey": 2,
+          "name": "Supplier#000000002",
+          "nationkey": 5
+        },
+        {
+          "suppkey": 3,
+          "name": "Supplier#000000003",
+          "nationkey": 1
+        },
+        {
+          "suppkey": 4,
+          "name": "Supplier#000000004",
+          "nationkey": 15
+        },
+        {
+          "suppkey": 5,
+          "name": "Supplier#000000005",
+          "nationkey": 11
+        }
+      ]
+    },
+    "aggregation": {
+      "sql": "SELECT brand,count(*) parts,avg(retailprice) avg_retailprice FROM bronze.lakehouse.part GROUP BY brand ORDER BY brand",
+      "wall_seconds": 2.648996354000019,
+      "rows": [
+        {
+          "brand": "Brand#11",
+          "parts": 399210,
+          "avg_retailprice": 1499.8958878284636
+        },
+        {
+          "brand": "Brand#12",
+          "parts": 400308,
+          "avg_retailprice": 1499.6249920810935
+        },
+        {
+          "brand": "Brand#13",
+          "parts": 399131,
+          "avg_retailprice": 1500.0436785165791
+        },
+        {
+          "brand": "Brand#14",
+          "parts": 400228,
+          "avg_retailprice": 1500.2527309683487
+        },
+        {
+          "brand": "Brand#15",
+          "parts": 401158,
+          "avg_retailprice": 1499.4210899446134
+        },
+        {
+          "brand": "Brand#21",
+          "parts": 400016,
+          "avg_retailprice": 1499.952120465174
+        },
+        {
+          "brand": "Brand#22",
+          "parts": 399236,
+          "avg_retailprice": 1499.4104222064168
+        },
+        {
+          "brand": "Brand#23",
+          "parts": 399907,
+          "avg_retailprice": 1499.4022078133114
+        },
+        {
+          "brand": "Brand#24",
+          "parts": 400306,
+          "avg_retailprice": 1499.747459618395
+        },
+        {
+          "brand": "Brand#25",
+          "parts": 400386,
+          "avg_retailprice": 1500.1946419455287
+        },
+        {
+          "brand": "Brand#31",
+          "parts": 400105,
+          "avg_retailprice": 1499.5288403294105
+        },
+        {
+          "brand": "Brand#32",
+          "parts": 400053,
+          "avg_retailprice": 1498.9414420589321
+        },
+        {
+          "brand": "Brand#33",
+          "parts": 399306,
+          "avg_retailprice": 1499.1216838715163
+        },
+        {
+          "brand": "Brand#34",
+          "parts": 399509,
+          "avg_retailprice": 1499.3283787348953
+        },
+        {
+          "brand": "Brand#35",
+          "parts": 400370,
+          "avg_retailprice": 1499.042790194062
+        },
+        {
+          "brand": "Brand#41",
+          "parts": 400454,
+          "avg_retailprice": 1500.1793742851792
+        },
+        {
+          "brand": "Brand#42",
+          "parts": 399645,
+          "avg_retailprice": 1500.0759562361675
+        },
+        {
+          "brand": "Brand#43",
+          "parts": 400523,
+          "avg_retailprice": 1499.2495063704175
+        },
+        {
+          "brand": "Brand#44",
+          "parts": 400789,
+          "avg_retailprice": 1499.438871550859
+        },
+        {
+          "brand": "Brand#45",
+          "parts": 399365,
+          "avg_retailprice": 1498.7515017089665
+        },
+        {
+          "brand": "Brand#51",
+          "parts": 400235,
+          "avg_retailprice": 1499.8157976438883
+        },
+        {
+          "brand": "Brand#52",
+          "parts": 400821,
+          "avg_retailprice": 1499.899741281026
+        },
+        {
+          "brand": "Brand#53",
+          "parts": 400180,
+          "avg_retailprice": 1498.6504755110218
+        },
+        {
+          "brand": "Brand#54",
+          "parts": 400003,
+          "avg_retailprice": 1499.1751958860352
+        },
+        {
+          "brand": "Brand#55",
+          "parts": 398756,
+          "avg_retailprice": 1498.2256503225017
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "bronze.lakehouse.supplier": {
+    "files": 1,
+    "rows": 500000,
+    "data_bytes": 26021799,
+    "first_data_file": "s3://bronze/supplier-6292574197f44b859803c5a1c574c014/data/20261017_152757_00013_y4di2-f287b88b-b978-4608-a7e8-b0fc291876ed.parquet"
+  },
+  "bronze.lakehouse.part": {
+    "files": 12,
+    "rows": 10000000,
+    "data_bytes": 208810442,
+    "first_data_file": "s3://bronze/part-34165b68476d4005922de5c7528c8992/data/20261017_152803_00015_y4di2-1660554c-6946-4858-ad1f-797f325d15bd.parquet"
+  },
+  "bronze.lakehouse.partsupp": {
+    "files": 12,
+    "rows": 40000000,
+    "data_bytes": 1392258090,
+    "first_data_file": "s3://bronze/partsupp-1fa2cf61d4884309a0be8497bb92346a/data/20261017_152815_00017_y4di2-1735e41d-fb66-46eb-a120-2b0b1b99ae79.parquet"
+  },
+  "silver.lakehouse.eligible_parts": {
+    "files": 1,
+    "rows": 1484993,
+    "data_bytes": 4565497,
+    "first_data_file": "s3://silver/eligible_parts-4301c6f4400b4f23a6af071b33d0cff2/data/20261017_152846_00020_y4di2-8a0338dd-71ab-430a-b132-115f199386b3.parquet"
+  },
+  "silver.lakehouse.part_suppliers": {
+    "files": 3,
+    "rows": 5937099,
+    "data_bytes": 18878283,
+    "first_data_file": "s3://silver/part_suppliers-d5d8755afcb6454cbcfcbdf479e4424e/data/20261017_152850_00021_y4di2-76c7b142-ccc8-4c07-a6c8-a280f1bd7804.parquet"
+  },
+  "gold.lakehouse.supplier_counts": {
+    "files": 1,
+    "rows": 27840,
+    "data_bytes": 74833,
+    "first_data_file": "s3://gold/supplier_counts-6dd94717f59c41f29afa518b0a218e98/data/20261017_152856_00022_y4di2-c75f7324-7d43-4d07-8a93-0b7fe060d007.parquet"
+  }
+}

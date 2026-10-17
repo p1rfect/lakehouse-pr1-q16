@@ -1,0 +1,66 @@
+name: pr1-balanov
+services:
+  storage:
+    image: pgsty/silo:RELEASE.2026-09-16T00-00-00Z@sha256:635197cb9f36d01bee221d34d1c7d7960f6a95c48b0b6c01d99cd13bdae51a46
+    command: server /data --console-address :9001
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: pr1-local-storage-2026
+    ports: ["127.0.0.1:19000:9000", "127.0.0.1:19001:9001"]
+    volumes: ["storage:/data"]
+    mem_limit: 2g
+  postgres:
+    image: postgres:17-alpine@sha256:742f40ea20b9ff2ff31db5458d127452988a2164df9e17441e191f3b72252193
+    environment:
+      POSTGRES_USER: lakekeeper
+      POSTGRES_PASSWORD: pr1-local-catalog-2026
+      POSTGRES_DB: lakekeeper
+    volumes: ["postgres:/var/lib/postgresql/data"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lakekeeper -d lakekeeper"]
+      interval: 3s
+      timeout: 3s
+      retries: 30
+    mem_limit: 512m
+  migrate:
+    image: quay.io/lakekeeper/catalog@sha256:f41c353ef981c64ea284e25f2abf804561600bd7d63d8a3ce956ad84c6611f33
+    command: migrate
+    environment: &catalog_env
+      LAKEKEEPER__PG_ENCRYPTION_KEY: local-lab-encryption-key-2026
+      LAKEKEEPER__PG_DATABASE_URL_READ: postgresql://lakekeeper:pr1-local-catalog-2026@postgres:5432/lakekeeper
+      LAKEKEEPER__PG_DATABASE_URL_WRITE: postgresql://lakekeeper:pr1-local-catalog-2026@postgres:5432/lakekeeper
+    depends_on:
+      postgres: {condition: service_healthy}
+  catalog:
+    image: quay.io/lakekeeper/catalog@sha256:f41c353ef981c64ea284e25f2abf804561600bd7d63d8a3ce956ad84c6611f33
+    command: serve
+    environment: *catalog_env
+    ports: ["127.0.0.1:18181:8181"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+    mem_limit: 768m
+  trino:
+    image: trinodb/trino:476@sha256:00125e40d063bc4816d165482f6044872b18b56026fb959d3b28ce1f96ffbbee
+    ports: ["127.0.0.1:18080:8080"]
+    volumes:
+      - ./catalog:/etc/trino/catalog:ro
+      - ./trino/config.properties:/etc/trino/config.properties:ro
+      - ./trino/jvm.config:/etc/trino/jvm.config:ro
+    depends_on: [catalog, storage]
+    mem_limit: 8g
+    cpus: 8
+  spark:
+    image: apache/spark:3.5.5@sha256:39321d67b23e2e0953f81b60778f74bf40c40a18dfb0e881e6a38593af60afa1
+    profiles: [tools]
+    user: root
+    entrypoint: ["/bin/bash", "-lc"]
+    command: ["sleep infinity"]
+    volumes:
+      - ./:/lab
+      - spark-jars:/opt/spark/.ivy2
+    mem_limit: 3g
+    cpus: 4
+volumes:
+  storage:
+  postgres:
+  spark-jars:

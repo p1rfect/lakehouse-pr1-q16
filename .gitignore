@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+data/
+*.log
+*.parquet
+*.orc
+.env
+.venv/
+results/error_*.json
+results/diagnostics/
+work/
